@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota Fortuner — Titanium Strength</title>
+  <meta name="description" content="Discover the new Toyota Fortuner. Intelligent four-wheel drive, premium comfort, and indomitable strength. Designed to push the boundaries of terrain.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w2.org/2000/svg%22 viewBox=%220%22 width=%2216%22 height=%2216%22><circle cx=%228%22 cy=%228%22 r=%228%22 fill=%22%23000000%22/></svg>">
+</head>
+<body>
+
+  <!-- Promo Banner -->
+  <div class="promo-banner" id="promo-banner">
+    <p>Toyota Lease: Drive the new Fortuner from ₹49,000/month. <a href="#" class="link-blue">Check details &gt;</a></p>
+  </div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="top-nav" id="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" aria-label="Toyota Home">
+        <!-- SVG Toyota Logo Representation -->
+        <svg viewBox="0 0 100 60" width="36" height="22" fill="currentColor">
+          <ellipse cx="50" cy="30" rx="45" ry="25" stroke="currentColor" stroke-width="4" fill="none"/>
+          <ellipse cx="50" cy="22" rx="28" ry="17" stroke="currentColor" stroke-width="4" fill="none"/>
+          <path d="M50,5 L50,55" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#hero">Fortuner</a>
+        <a href="#showroom">Colors</a>
+        <a href="#adventure">Adventure</a>
+        <a href="#smart-control">Smart Control</a>
+        <a href="#detail-blocks">Details</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </button>
+        <button class="nav-icon-btn" aria-label="Shopping bag">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Act 1: Hero Stage -->
+    <section class="hero-stage" id="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <svg viewBox="0 0 100 60" width="16" height="10" fill="currentColor" style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <ellipse cx="50" cy="30" rx="45" ry="25" stroke="currentColor" stroke-width="6" fill="none"/>
+            <ellipse cx="50" cy="22" rx="28" ry="17" stroke="currentColor" stroke-width="6" fill="none"/>
+            <path d="M50,5 L50,55" stroke="currentColor" stroke-width="7"/>
+          </svg>
+          Fortuner
+        </div>
+        <h1 class="hero-headline">Fortuner.<br>Titanium strength.</h1>
+      </div>
+      
+      <div class="hero-product-container">
+        <img id="hero-img" src="images/fortuner_hero.png" alt="Toyota Fortuner in Titanium Gray" class="hero-product-img">
+      </div>
+
+      <div class="hero-bottom-bar">
+        <div class="action-cluster">
+          <span class="ghost-price">From ₹33,43,000</span>
+          <a href="#" class="cta-button">Buy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showroom Color Selector Section -->
+    <section class="showroom-section" id="showroom">
+      <div class="showroom-container">
+        <div class="showroom-header">
+          <h2 class="showroom-title">Find your tone.</h2>
+          <p class="showroom-subtitle">Polished metallic finishes over a reinforced chassis.</p>
+        </div>
+        
+        <div class="showroom-display">
+          <img id="showroom-img" src="images/fortuner_hero.png" alt="Toyota Fortuner Showroom" class="showroom-car-img">
+          <div class="color-name-display" id="color-name">Titanium Gray</div>
+        </div>
+
+        <div class="color-picker-container">
+          <button class="color-dot active" data-color="titanium" data-image="images/fortuner_hero.png" data-name="Titanium Gray" aria-label="Titanium Gray" style="background: #8e9091;"></button>
+          <button class="color-dot" data-color="black" data-image="images/fortuner_black.png" data-name="Obsidian Black" aria-label="Obsidian Black" style="background: #111111;"></button>
+          <button class="color-dot" data-color="bronze" data-image="images/fortuner_bronze.png" data-name="Bronze Copper" aria-label="Bronze Copper" style="background: #8c7561;"></button>
+          <button class="color-dot" data-color="white" data-image="images/fortuner_white.png" data-name="Pearl White" aria-label="Pearl White" style="background: #fbfbfb; border: 1px solid #d2d2d7;"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Act 2: Feature Stage (Dark Stage with B&W Action) -->
+    <section class="feature-section-dark" id="adventure">
+      <div class="section-container">
+        <h2 class="section-headline-dark">Built for the extreme.</h2>
+        
+        <div class="feature-card-dark fade-in-trigger">
+          <img src="images/fortuner_adventure_bw.png" alt="Toyota Fortuner climbing a rocky hill" class="card-bg-img">
+          <div class="card-overlay">
+            <span class="card-eyebrow">TRACTION FORCE</span>
+            <h3 class="card-title">Differential lock.</h3>
+            <p class="card-desc">Dominate mud, rocks, and the steepest slopes. The A-TRC system distributes engine torque intelligently and selectively to each wheel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Smart Control (Watch Complication Display) -->
+    <section class="smart-control-section" id="smart-control">
+      <div class="section-container">
+        <div class="smart-layout">
+          <div class="smart-text-col">
+            <span class="orange-eyebrow">CONNECTIVITY</span>
+            <h2 class="display-headline-white">Control on your wrist.</h2>
+            <p class="smart-body-text">Start the engine, pre-cool the cabin, or lock the doors directly from your smartwatch app. Designed to integrate seamlessly with your daily devices.</p>
+            <div class="smart-status-indicator">
+              <span class="pulse-dot"></span>
+              <span id="watch-status-text">Fortuner: Connected</span>
+            </div>
+          </div>
+          
+          <div class="smart-visual-col">
+            <!-- Smart Watch Mockup -->
+            <div class="watch-container">
+              <div class="watch-strap strap-top"></div>
+              <div class="watch-case">
+                <div class="watch-screen">
+                  <div class="watch-header">
+                    <span class="watch-time">10:09</span>
+                    <span class="watch-temp">24°</span>
+                  </div>
+                  
+                  <!-- Circular dashboard visualization -->
+                  <div class="watch-dial">
+                    <svg viewBox="0 0 100 100" class="dial-svg">
+                      <circle cx="50" cy="50" r="42" stroke="#333336" stroke-width="4" fill="none" />
+                      <circle cx="50" cy="50" r="42" stroke="#a3e635" stroke-width="4" fill="none" stroke-dasharray="264" stroke-dashoffset="66" class="dial-progress" id="dial-progress-bar" />
+                    </svg>
+                    <div class="dial-center">
+                      <span class="dial-label">FUEL</span>
+                      <span class="dial-value" id="dial-value-text">75%</span>
+                    </div>
+                  </div>
+
+                  <div class="watch-controls">
+                    <button class="watch-btn" id="watch-btn-engine" aria-label="Start Engine">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                      </svg>
+                      <span class="btn-label">ENGINE</span>
+                    </button>
+                    <button class="watch-btn" id="watch-btn-climate" aria-label="Climate Control">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                        <path d="M12 6v6l4 2"/>
+                      </svg>
+                      <span class="btn-label">CLIMATE</span>
+                    </button>
+                    <button class="watch-btn" id="watch-btn-lock" aria-label="Lock Doors">
+                      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                      </svg>
+                      <span class="btn-label">LOCK</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="watch-strap strap-bottom"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Act 3: Light Section Detail Bands -->
+    <section class="detail-blocks-section" id="detail-blocks">
+      <!-- Block 1: Interior Confort (Image Left / Text Right) -->
+      <div class="detail-block light-bg">
+        <div class="detail-block-container">
+          <div class="detail-image-col">
+            <img src="images/fortuner_interior.png" alt="Luxury interior cabin of the Toyota Fortuner with leather seats" class="detail-full-img">
+          </div>
+          <div class="detail-text-col">
+            <span class="orange-eyebrow">INTERIOR</span>
+            <h2 class="display-headline-dark">First-class comfort.</h2>
+            <p class="body-text-platinum">The Fortuner cabin combines curated premium leather with advanced technology. Three rows of reconfigurable seats offer a versatile space for seven passengers, insulated from wind noise via high-density acoustic glass.</p>
+            <div class="drill-in-container">
+              <a href="#" class="drill-in-link">
+                <span class="drill-in-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </span>
+                <span class="drill-in-label">Explore the cabin space</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 2: Performance (Text Left / Image Right) -->
+      <div class="detail-block light-bg invert-row">
+        <div class="detail-block-container">
+          <div class="detail-image-col">
+            <!-- Full bleed outdoor image -->
+            <img src="images/fortuner_adventure_bw.png" alt="Toyota Fortuner in off-road action" class="detail-full-img" style="filter: grayscale(0);">
+          </div>
+          <div class="detail-text-col">
+            <span class="orange-eyebrow">TECHNOLOGY</span>
+            <h2 class="display-headline-dark">Intelligent 4WD.</h2>
+            <p class="body-text-platinum">A rotary selector lets you instantly switch between two-wheel drive (2WD) for highway and four-wheel drive (4WD) for challenging terrains. The electronic locking rear differential provides the necessary grip on extreme slopes.</p>
+            <div class="drill-in-container">
+              <a href="#" class="drill-in-link">
+                <span class="drill-in-circle">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </span>
+                <span class="drill-in-label">Technical specifications</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Purchase Stage (Cinematic CTA) -->
+    <section class="bottom-cta-section">
+      <div class="bottom-cta-container">
+        <div class="bottom-logo-wrapper">
+          <svg viewBox="0 0 100 60" width="48" height="30" fill="currentColor">
+            <ellipse cx="50" cy="30" rx="45" ry="25" stroke="currentColor" stroke-width="5" fill="none"/>
+            <ellipse cx="50" cy="22" rx="28" ry="17" stroke="currentColor" stroke-width="5" fill="none"/>
+            <path d="M50,5 L50,55" stroke="currentColor" stroke-width="6"/>
+          </svg>
+        </div>
+        <h2 class="bottom-headline">The new Fortuner.<br>Indomitable by nature.</h2>
+        <div class="bottom-actions">
+          <span class="ghost-price">From ₹33,43,000 or ₹49,000/month</span>
+          <a href="#" class="cta-button">Buy</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Apple Style Footer -->
+  <footer class="footer-stage">
+    <div class="footer-container">
+      <!-- Legal/Footnotes -->
+      <section class="footer-notes">
+        <p class="caption-text">* Combined fuel consumption of 7.9 to 8.5 l/100km and CO2 emissions of 207 to 224 g/km under WLTP. Lease promotion valid for Toyota Fortuner 2.8 D-4D Titanium Gray. 48-month contract and 10,000 km annually with an initial down payment of ₹8,50,000. Subject to financial approval by Toyota Financial Services.</p>
+        <p class="caption-text">Remote connectivity via Smart Watch requires mobile compatibility and an active official Toyota app with a current subscription to connected services.</p>
+      </section>
+      
+      <!-- Directory Grid Links -->
+      <nav class="footer-directory" aria-label="Important links">
+        <div class="directory-column">
+          <h3>SUV Models</h3>
+          <ul>
+            <li><a href="#">Yaris Cross</a></li>
+            <li><a href="#">RAV4 Hybrid</a></li>
+            <li><a href="#">Land Cruiser</a></li>
+            <li><a href="#">Fortuner Titanium</a></li>
+            <li><a href="#">Hilux Extreme</a></li>
+          </ul>
+        </div>
+        <div class="directory-column">
+          <h3>Technology</h3>
+          <ul>
+            <li><a href="#">Toyota Safety Sense</a></li>
+            <li><a href="#">D-4D Engines</a></li>
+            <li><a href="#">A-TRC Traction</a></li>
+            <li><a href="#">Smart Connectivity</a></li>
+          </ul>
+        </div>
+        <div class="directory-column">
+          <h3>Services & Purchase</h3>
+          <ul>
+            <li><a href="#">Configurator</a></li>
+            <li><a href="#">Request Catalog</a></li>
+            <li><a href="#">Individual Leasing</a></li>
+            <li><a href="#">Toyota Dealerships</a></li>
+            <li><a href="#">Book a Service</a></li>
+          </ul>
+        </div>
+        <div class="directory-column">
+          <h3>Toyota Global</h3>
+          <ul>
+            <li><a href="#">About Toyota</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">News & Press</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      <!-- Copyright and Bottom Info -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <span>Copyright © 2026 Toyota S.L.U. All rights reserved.</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Legal Information</a>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

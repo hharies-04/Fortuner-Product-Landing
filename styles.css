@@ -1,0 +1,1037 @@
+/* ==========================================================================
+   Apple (España) — Style Reference Implementation for Toyota Fortuner
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors */
+  --color-obsidian: #1d1d1f;      /* Primary dark canvas / text on light */
+  --color-frost-white: #f5f5f7;   /* Primary text on dark / light surfaces */
+  --color-pure-black: #000000;    /* Deepest dark canvas */
+  --color-paper-white: #ffffff;   /* Light section backgrounds */
+  --color-carbon: #111111;        /* Elevated surface above black */
+  --color-platinum: #86868b;      /* Muted body text / descriptions */
+  --color-graphite: #333336;      /* Subtle elevated surfaces / secondary btn fills */
+  --color-silver-mist: #cccccc;   /* Nav borders / button outlines */
+  --color-smoke: #424245;         /* Hairline borders on dark */
+  --color-apple-blue: #0071e3;    /* Primary CTA fill (Comprar) */
+  --color-link-blue: #0066cc;     /* Text links on white */
+  --color-halo-blue: #2997ff;     /* Lighter link variant on dark */
+  --color-signal-orange: #f56900; /* Eyebrows / tags */
+  --color-iris-violet: #8668ff;   /* Secondary accent */
+  --color-reef-teal: #00a1b3;     /* Tertiary accent */
+  --color-neon-green: #a3e635;    /* Smart watch interface */
+
+  /* Spacing */
+  --space-base: 4px;
+  --max-width: 1440px;
+  --section-gap: 100px;
+  --card-padding: 28px;
+  --element-gap: 12px;
+
+  /* Border Radii */
+  --radius-nav: 980px;
+  --radius-pill: 980px;
+  --radius-cards: 28px;
+  --radius-links: 10px;
+  --radius-buttons: 36px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Base Styles & Reset
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-pure-black);
+  color: var(--color-frost-white);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.25s ease;
+}
+
+/* Typography Scales */
+.hero-headline {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.24px;
+}
+
+.display-headline-white,
+.display-headline-dark {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.84px;
+}
+
+.display-headline-dark {
+  color: var(--color-obsidian);
+}
+
+.section-headline-dark {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.84px;
+  color: var(--color-frost-white);
+  margin-bottom: 24px;
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.32px;
+}
+
+.body-text-platinum {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.22px;
+  color: var(--color-platinum);
+}
+
+.caption-text {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.83;
+  letter-spacing: -0.37px;
+  color: var(--color-platinum);
+}
+
+.orange-eyebrow {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.19px;
+  color: var(--color-signal-orange);
+  text-transform: uppercase;
+  margin-bottom: var(--element-gap);
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. Navigation & Header
+   -------------------------------------------------------------------------- */
+.promo-banner {
+  background-color: var(--color-obsidian);
+  color: var(--color-frost-white);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -0.12px;
+  z-index: 1001;
+  position: relative;
+}
+
+.link-blue {
+  color: var(--color-link-blue);
+  font-weight: 600;
+  margin-left: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.link-blue:hover {
+  opacity: 0.8;
+}
+
+.top-nav {
+  position: sticky;
+  top: 12px;
+  left: 0;
+  width: calc(100% - 24px);
+  max-width: 980px;
+  margin: 0 auto;
+  height: 48px;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-nav);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              background-color 0.3s ease, 
+              border-color 0.3s ease;
+}
+
+/* Sticky Shrink effect when scrolling */
+.top-nav.scrolled {
+  transform: translateY(-4px) scale(0.98);
+  background-color: rgba(0, 0, 0, 0.95);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-container {
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: var(--color-frost-white);
+  display: flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-frost-white);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-icon-btn {
+  background: none;
+  border: none;
+  color: var(--color-frost-white);
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.nav-icon-btn:hover {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. Act 1: Hero Stage
+   -------------------------------------------------------------------------- */
+.hero-stage {
+  height: calc(100vh - 72px);
+  min-height: 680px;
+  background-color: var(--color-pure-black);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 48px 48px 48px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  align-self: flex-start;
+}
+
+.hero-eyebrow {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-frost-white);
+  margin-bottom: 8px;
+  letter-spacing: -0.19px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-product-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  width: 90%;
+  max-width: 860px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-product-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* Floating animation */
+  animation: floatVehicle 8s ease-in-out infinite;
+}
+
+@keyframes floatVehicle {
+  0% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0px) scale(1); }
+}
+
+.hero-bottom-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.action-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cta-button {
+  background-color: var(--color-apple-blue);
+  color: var(--color-paper-white);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.22px;
+  padding: 10px 20px;
+  border-radius: var(--radius-buttons);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #0077ed;
+  transform: scale(1.03);
+}
+
+.cta-button:active {
+  transform: scale(0.97);
+}
+
+.ghost-price {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-frost-white);
+  padding: 10px 20px;
+  border-radius: var(--radius-buttons);
+  background: transparent;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Showroom Color Selector
+   -------------------------------------------------------------------------- */
+.showroom-section {
+  background-color: var(--color-pure-black);
+  padding: var(--section-gap) 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.showroom-container {
+  background-color: var(--color-obsidian);
+  border-radius: var(--radius-cards);
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.showroom-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.showroom-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.32px;
+  color: var(--color-frost-white);
+  margin-bottom: 8px;
+}
+
+.showroom-subtitle {
+  font-size: 17px;
+  color: var(--color-platinum);
+}
+
+.showroom-display {
+  width: 100%;
+  max-width: 680px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.showroom-car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  opacity: 1;
+}
+
+.showroom-car-img.changing {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.color-name-display {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-frost-white);
+  margin-top: 16px;
+  min-height: 24px;
+}
+
+.color-picker-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.color-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none; /* Apple flat style */
+  transition: border-color 0.25s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.color-dot:hover {
+  transform: scale(1.1);
+}
+
+.color-dot.active {
+  border-color: var(--color-apple-blue);
+  transform: scale(1.15);
+}
+
+/* --------------------------------------------------------------------------
+   6. Act 2: Feature Section (Dark Stage + Feature Card)
+   -------------------------------------------------------------------------- */
+.feature-section-dark {
+  background-color: var(--color-pure-black);
+  padding: var(--section-gap) 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.feature-card-dark {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background-color: var(--color-carbon);
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.feature-card-dark:hover .card-bg-img {
+  transform: scale(1.02);
+}
+
+.card-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 48px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-halo-blue);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.card-title {
+  color: var(--color-paper-white);
+  margin-bottom: var(--element-gap);
+}
+
+.card-desc {
+  font-size: 17px;
+  line-height: 1.47;
+  color: var(--color-frost-white);
+  max-width: 420px;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   7. Smart Control Section (Watch Complication Display)
+   -------------------------------------------------------------------------- */
+.smart-control-section {
+  background-color: var(--color-pure-black);
+  padding: var(--section-gap) 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.smart-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.smart-body-text {
+  font-size: 17px;
+  line-height: 1.47;
+  color: var(--color-platinum);
+  margin-bottom: 24px;
+}
+
+.smart-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-frost-white);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-neon-green);
+  animation: pulseNeon 2s infinite;
+}
+
+@keyframes pulseNeon {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.smart-visual-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Watch Mockup Styles */
+.watch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.watch-strap {
+  width: 120px;
+  height: 90px;
+  background-color: var(--color-graphite);
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+.strap-top {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.strap-bottom {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.watch-case {
+  width: 200px;
+  height: 240px;
+  background-color: var(--color-carbon);
+  border: 4px solid var(--color-graphite);
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: none; /* Pure Apple flat */
+  position: relative;
+  z-index: 10;
+}
+
+.watch-screen {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-pure-black);
+  border-radius: 30px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.watch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-platinum);
+}
+
+.watch-temp {
+  color: var(--color-signal-orange);
+}
+
+.watch-dial {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.dial-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.dial-progress {
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.dial-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.dial-label {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--color-platinum);
+  letter-spacing: 0.5px;
+}
+
+.dial-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-frost-white);
+  line-height: 1.1;
+}
+
+.watch-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.watch-btn {
+  background-color: var(--color-graphite);
+  border: none;
+  border-radius: var(--radius-links);
+  color: var(--color-frost-white);
+  padding: 6px 2px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.watch-btn:hover {
+  background-color: var(--color-smoke);
+}
+
+.watch-btn.active {
+  background-color: var(--color-neon-green);
+  color: var(--color-pure-black);
+}
+
+.watch-btn .btn-label {
+  font-size: 8px;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   8. Act 3: Light Section Detail Bands
+   -------------------------------------------------------------------------- */
+.detail-blocks-section {
+  background-color: var(--color-paper-white);
+  color: var(--color-obsidian);
+  position: relative;
+  z-index: 10;
+}
+
+.detail-block {
+  padding: var(--section-gap) 48px;
+  border-bottom: 1px solid var(--color-frost-white);
+}
+
+.detail-block:last-child {
+  border-bottom: none;
+}
+
+.detail-block-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.detail-image-col {
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  background-color: var(--color-frost-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.detail-block:hover .detail-full-img {
+  transform: scale(1.01);
+}
+
+.detail-text-col {
+  padding-right: 48px;
+}
+
+/* Invert row columns for alternating layout */
+.invert-row .detail-block-container {
+  direction: rtl;
+}
+
+.invert-row .detail-text-col,
+.invert-row .detail-image-col {
+  direction: ltr; /* Reset text direction */
+}
+
+.invert-row .detail-text-col {
+  padding-right: 0;
+  padding-left: 48px;
+}
+
+.drill-in-container {
+  margin-top: 24px;
+}
+
+.drill-in-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-obsidian);
+  font-weight: 600;
+  font-size: 17px;
+  transition: opacity 0.2s ease;
+}
+
+.drill-in-circle {
+  width: 28px;
+  height: 28px;
+  background-color: var(--color-obsidian);
+  color: var(--color-paper-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.drill-in-link:hover .drill-in-circle {
+  transform: translateX(4px);
+}
+
+.drill-in-link:hover {
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   9. Bottom Purchase Stage (Cinematic CTA)
+   -------------------------------------------------------------------------- */
+.bottom-cta-section {
+  background-color: var(--color-pure-black);
+  padding: 120px 48px;
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.bottom-logo-wrapper {
+  color: var(--color-frost-white);
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.bottom-headline {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.84px;
+  color: var(--color-frost-white);
+  margin-bottom: 40px;
+}
+
+.bottom-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.bottom-actions .ghost-price {
+  color: var(--color-platinum);
+}
+
+.bottom-actions .cta-button {
+  padding: 14px 28px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Footer Section
+   -------------------------------------------------------------------------- */
+.footer-stage {
+  background-color: var(--color-obsidian);
+  color: var(--color-platinum);
+  padding: 60px 48px;
+  border-top: 1px solid var(--color-smoke);
+}
+
+.footer-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.footer-notes {
+  border-bottom: 1px solid var(--color-smoke);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-directory {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.directory-column h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-frost-white);
+  margin-bottom: 16px;
+}
+
+.directory-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.directory-column ul a {
+  font-size: 12px;
+  color: var(--color-platinum);
+}
+
+.directory-column ul a:hover {
+  color: var(--color-frost-white);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  border-top: 1px solid var(--color-smoke);
+  padding-top: 20px;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-legal-links a:hover {
+  color: var(--color-frost-white);
+}
+
+/* --------------------------------------------------------------------------
+   11. Scroll Reveal Micro-Animations & Responsiveness
+   -------------------------------------------------------------------------- */
+.fade-in-trigger {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade-in-trigger.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Grid & Layout Tweaks */
+@media (max-width: 1024px) {
+  .hero-headline {
+    font-size: 64px;
+  }
+  .display-headline-white,
+  .display-headline-dark,
+  .section-headline-dark,
+  .bottom-headline {
+    font-size: 44px;
+  }
+  .detail-block-container {
+    gap: 40px;
+  }
+  .smart-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .smart-status-indicator {
+    justify-content: center;
+  }
+  .invert-row .detail-block-container {
+    direction: ltr; /* Reset to normal stack order on smaller screens */
+  }
+  .invert-row .detail-text-col {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-stage {
+    padding: 60px 24px 24px 24px;
+  }
+  .hero-headline {
+    font-size: 48px;
+  }
+  .display-headline-white,
+  .display-headline-dark,
+  .section-headline-dark,
+  .bottom-headline {
+    font-size: 32px;
+  }
+  .top-nav {
+    display: none; /* Hide desktop nav bar, fallback/mobile nav logic */
+  }
+  .detail-block-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .detail-text-col {
+    padding-right: 0;
+  }
+  .showroom-container {
+    padding: 40px 20px;
+  }
+  .showroom-display {
+    height: 240px;
+  }
+  .feature-card-dark {
+    height: 420px;
+  }
+  .card-overlay {
+    padding: 24px;
+  }
+  .footer-directory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
